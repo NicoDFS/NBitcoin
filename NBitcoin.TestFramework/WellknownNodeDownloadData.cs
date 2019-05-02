@@ -429,7 +429,36 @@ namespace NBitcoin.Tests
 			};
 		}
 
-		public class BitcoreNodeDownloadData
+        public class VulcanoNodeDownloadData
+        {
+            public NodeDownloadData v2_1_0 = new NodeDownloadData()
+            {
+                Version = "2.1.0",
+                Windows = new NodeOSDownloadData()
+                {
+                    DownloadLink = "https://github.com/VulcanoCrypto/Vulcano/releases/download/2.1.0.0/Vulcano-2.1.0.0-win64.zip",
+                    Archive = "vulcano-{0}-win64.zip",
+                    Executable = "vulcano-{0}/bin/vulcanod.exe",
+                    //Hash = "ca470f2c4fcee527019f08406d26a469fc84e3118f87b1f4ac1e1f05dcee284e"
+                },
+                Linux = new NodeOSDownloadData()
+                {
+                    DownloadLink = "https://github.com/VulcanoCrypto/Vulcano/releases/download/2.1.0.0/Vulcano-2.1.0.0-x86_64-linux64-gnu.tar.gz",
+                    Archive = "vulcano-{0}-x86_64-linux-gnu.tar.gz",
+                    Executable = "vulcano-{0}/bin/vulcanod",
+                    //Hash = "9b49c912b154c4584b7e77ba7665f60cc78cc1c1321f3ca08b36efca016d359f"
+                },
+                Mac = new NodeOSDownloadData()
+                {
+                    DownloadLink = "https://github.com/VulcanoCrypto/Vulcano/releases/download/2.1.0.0/Vulcano-2.1.0.0-osx64.tar.gz",
+                    Archive = "vulcano-{0}-osx64.tar.gz",
+                    Executable = "vulcano-{0}/bin/vulcanod",
+                    //Hash = "9d7ae6cdc6afdecfbf6425e4e652baeb7c6b440c90dc8e7ac1cb30a7f7e0574e"
+                }
+            };
+        }
+
+        public class BitcoreNodeDownloadData
 		{
 			public NodeDownloadData v0_15_2 = new NodeDownloadData()
 			{
@@ -950,7 +979,12 @@ namespace NBitcoin.Tests
 			get; set;
 		} = new PolisNodeDownloadData();
 
-		public static MonacoinNodeDownloadData Monacoin
+        public static VulcanoNodeDownloadData Vulcano
+        {
+            get; set;
+        } = new VulcanoNodeDownloadData();
+
+        public static MonacoinNodeDownloadData Monacoin
 		{
 			get; set;
 		} = new MonacoinNodeDownloadData();
